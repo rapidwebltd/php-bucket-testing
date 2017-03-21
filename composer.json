@@ -1,0 +1,22 @@
+{
+    "name": "rapidwebltd/php-bucket-testing",
+    "description": "Basic PHP Bucket Testing System",
+    "license": "LGPL3",
+    "keywords": [
+        "a b testing",
+        "split testing",
+        "bucket testing",
+        "UX testing",
+        "UI testing",
+        "testing",
+        "frontend testing"
+      ],
+    "require": {
+        "php": ">=5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "RapidWeb\\BucketTesting\\": "./src/"
+        }
+    }
+}
