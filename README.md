@@ -7,7 +7,7 @@ This type of testing is used to test two or more versions of a webpage to determ
 performs better based on specfied key metrics, such as clicks, download, purchases or any other
 form of conversion.
 
-# Features
+## Features
 
 * Random selection of buckets, with optional weights
 * Automatic handling of temporary redirects
