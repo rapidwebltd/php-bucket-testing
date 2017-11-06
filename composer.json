@@ -1,6 +1,6 @@
 {
     "name": "rapidwebltd/php-bucket-testing",
-    "description": "PHP Bucket Testing",
+    "description": "This library enables developers to easily redirect users to different URLs, for the purpose of bucket testing. Bucket testing is also known as A/B testing or split testing. This type of testing is used to test two or more versions of a webpage to determine which one performs better based on specfied key metrics, such as clicks, downloads, purchases or any other form of conversion.",
     "license": "LGPL3",
     "keywords": [
         "a b testing",
