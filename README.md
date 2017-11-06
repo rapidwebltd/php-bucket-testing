@@ -1,6 +1,6 @@
 # PHP Bucket Testing
 
-This library allow for developers to easily redirect users to different URLs, for the purpose 
+This library enables developers to easily redirect users to different URLs, for the purpose 
 of bucket testing. Bucket testing is also known as A/B testing or split testing.
 
 This type of testing is used to test two or more versions of a webpage to determine which one
