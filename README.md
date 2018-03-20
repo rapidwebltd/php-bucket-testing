@@ -1,5 +1,7 @@
 # PHP Bucket Testing
 
+[![Build Status](https://travis-ci.org/rapidwebltd/php-bucket-testing.svg?branch=master)](https://travis-ci.org/rapidwebltd/php-bucket-testing)
+
 This library enables developers to easily redirect users to different URLs, for the purpose 
 of bucket testing. Bucket testing is also known as A/B testing or split testing.
 
