@@ -13,6 +13,15 @@ final class ExceptionsTest extends TestCase
         (new BucketManager())->getRandomBucket();
     }
 
+    public function testGetMostRecentlyAddedWeightedBucketWhenNoBucketsAreAdded()
+    {
+        $method = new ReflectionMethod(BucketManager::class, 'getMostRecentlyAddedWeightedBucket');
+        $method->setAccessible(true);
+
+        $this->expectException(Exception::class);
+        $method->invoke(new BucketManager());
+    }
+
     public function testRedirectWhenNoBucketsAreAdded()
     {
         $this->expectException(Exception::class);
