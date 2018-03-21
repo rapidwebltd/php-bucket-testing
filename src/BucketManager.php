@@ -2,15 +2,13 @@
 
 namespace RapidWeb\BucketTesting;
 
-use RapidWeb\BucketTesting\Bucket;
-use RapidWeb\BucketTesting\WeightedBucketSelector;
 use Exception;
 
 class BucketManager
 {
     private $weightedBuckets = [];
 
-    public function add(Bucket $bucket) 
+    public function add(Bucket $bucket)
     {
         $this->weightedBuckets[] = new WeightedBucket($bucket);
 
