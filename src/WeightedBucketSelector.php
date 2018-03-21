@@ -7,7 +7,7 @@ use Exception;
 class WeightedBucketSelector
 {
     private $weightedBuckets;
-    
+
     public function __construct(array $weightedBuckets)
     {
         $this->weightedBuckets = $weightedBuckets;
@@ -24,8 +24,8 @@ class WeightedBucketSelector
         return $this->weightedBuckets[$index];
     }
 
-    private function getRandomWeightedIndex() {
-
+    private function getRandomWeightedIndex()
+    {
         $indexToWeightArray = $this->getIndexToWeightArray();
 
         $rand = mt_rand(1, (int) array_sum($indexToWeightArray));
@@ -40,15 +40,14 @@ class WeightedBucketSelector
         throw new Exception('Error retrieving random weighted index during bucket selection process.');
     }
 
-    private function getIndexToWeightArray() {
-        
+    private function getIndexToWeightArray()
+    {
         $indexToWeightArray = [];
 
-        foreach($this->weightedBuckets as $index => $weightedBucket) {
+        foreach ($this->weightedBuckets as $index => $weightedBucket) {
             $indexToWeightArray[$index] = $weightedBucket->weight;
         }
 
         return $indexToWeightArray;
-
-    } 
+    }
 }

@@ -1,23 +1,22 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use RapidWeb\BucketTesting\Bucket;
 use RapidWeb\BucketTesting\BucketManager;
 use RapidWeb\BucketTesting\WeightedBucket;
-use RapidWeb\BucketTesting\Bucket;
 
 final class ExceptionsTest extends TestCase
 {
-
     public function testGetRandomBucketWhenNoBucketsAreAdded()
     {
         $this->expectException(Exception::class);
-        (new BucketManager)->getRandomBucket();
+        (new BucketManager())->getRandomBucket();
     }
 
     public function testRedirectWhenNoBucketsAreAdded()
     {
         $this->expectException(Exception::class);
-        (new BucketManager)->redirect();
+        (new BucketManager())->redirect();
     }
 
     public function testCreatingWeightedBucketWithStringWeight()
@@ -43,5 +42,4 @@ final class ExceptionsTest extends TestCase
         $this->expectException(Exception::class);
         (new WeightedBucket(new Bucket('https://php.net/')))->setWeight(0);
     }
-
 }
