@@ -3,6 +3,7 @@
 namespace RapidWeb\BucketTesting;
 
 use RapidWeb\BucketTesting\Bucket;
+use Exception;
 
 class WeightedBucket
 {
@@ -16,7 +17,7 @@ class WeightedBucket
 
     public function setWeight($weight)
     {
-        if (!is_integer($weight) && $weight >= 1) {
+        if (!is_integer($weight) || $weight < 1) {
             throw new Exception('Weight must be specified as a positive integer.');
         }
 
