@@ -14,6 +14,12 @@ final class ExceptionsTest extends TestCase
         (new BucketManager)->getRandomBucket();
     }
 
+    public function testRedirectWhenNoBucketsAreAdded()
+    {
+        $this->expectException(Exception::class);
+        (new BucketManager)->redirect();
+    }
+
     public function testCreatingWeightedBucketWithStringWeight()
     {
         $this->expectException(Exception::class);
