@@ -7,48 +7,59 @@ use RapidWeb\BucketTesting\WeightedBucket;
 
 final class ExceptionsTest extends TestCase
 {
+    private function expectExceptionCompatible($class)
+    {
+        if (method_exists($this, 'expectException')) {
+            $this->expectException($class);
+
+            return;
+        }
+
+        $this->setExpectedException($class);
+    }
+
     public function testGetRandomBucketWhenNoBucketsAreAdded()
     {
-        $this->expectException(Exception::class);
+        $this->expectExceptionCompatible('Exception');
         (new BucketManager())->getRandomBucket();
     }
 
     public function testGetMostRecentlyAddedWeightedBucketWhenNoBucketsAreAdded()
     {
-        $method = new ReflectionMethod(BucketManager::class, 'getMostRecentlyAddedWeightedBucket');
+        $method = new ReflectionMethod('RapidWeb\\BucketTesting\\BucketManager', 'getMostRecentlyAddedWeightedBucket');
         $method->setAccessible(true);
 
-        $this->expectException(Exception::class);
+        $this->expectExceptionCompatible('Exception');
         $method->invoke(new BucketManager());
     }
 
     public function testRedirectWhenNoBucketsAreAdded()
     {
-        $this->expectException(Exception::class);
+        $this->expectExceptionCompatible('Exception');
         (new BucketManager())->redirect();
     }
 
     public function testCreatingWeightedBucketWithStringWeight()
     {
-        $this->expectException(Exception::class);
+        $this->expectExceptionCompatible('Exception');
         (new WeightedBucket(new Bucket('https://php.net/')))->setWeight('not a number!');
     }
 
     public function testCreatingWeightedBucketWithFloatWeight()
     {
-        $this->expectException(Exception::class);
+        $this->expectExceptionCompatible('Exception');
         (new WeightedBucket(new Bucket('https://php.net/')))->setWeight(2.75);
     }
 
     public function testCreatingWeightedBucketWithNegativeWeight()
     {
-        $this->expectException(Exception::class);
+        $this->expectExceptionCompatible('Exception');
         (new WeightedBucket(new Bucket('https://php.net/')))->setWeight(-1);
     }
 
     public function testCreatingWeightedBucketWithZeroWeight()
     {
-        $this->expectException(Exception::class);
+        $this->expectExceptionCompatible('Exception');
         (new WeightedBucket(new Bucket('https://php.net/')))->setWeight(0);
     }
 }

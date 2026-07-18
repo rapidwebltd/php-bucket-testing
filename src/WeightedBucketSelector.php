@@ -16,7 +16,7 @@ class WeightedBucketSelector
     public function getRandomBucket()
     {
         if (!$this->weightedBuckets) {
-            throw new Exception('There are not weighted buckets available. You must add a bucket first!');
+            throw new Exception('There are no weighted buckets available. You must add a bucket first!');
         }
 
         $index = $this->getRandomWeightedIndex();

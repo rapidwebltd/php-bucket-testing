@@ -1,13 +1,12 @@
 # PHP Bucket Testing
 
-[![Build Status](https://travis-ci.org/rapidwebltd/php-bucket-testing.svg?branch=master)](https://travis-ci.org/rapidwebltd/php-bucket-testing)
-[![Coverage Status](https://coveralls.io/repos/github/rapidwebltd/php-bucket-testing/badge.svg?branch=master)](https://coveralls.io/github/rapidwebltd/php-bucket-testing?branch=master)
+[![Tests](https://github.com/rapidwebltd/php-bucket-testing/actions/workflows/tests.yml/badge.svg)](https://github.com/rapidwebltd/php-bucket-testing/actions/workflows/tests.yml)
 
 This library enables developers to easily redirect users to different URLs, for the purpose 
 of bucket testing. Bucket testing is also known as A/B testing or split testing.
 
 This type of testing is used to test two or more versions of a webpage to determine which one
-performs better based on specfied key metrics, such as clicks, downloads, purchases or any other
+performs better based on specified key metrics, such as clicks, downloads, purchases or any other
 form of conversion.
 
 ## Features
