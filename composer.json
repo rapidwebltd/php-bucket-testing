@@ -12,15 +12,19 @@
         "frontend testing"
       ],
     "require": {
-        "php": ">=5.3"
+        "php": ">=5.4"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.7",
-        "satooshi/php-coveralls": "^2.0"
+        "phpunit/phpunit": "^4.8 || ^5.7 || ^9.6"
     },
     "autoload": {
         "psr-4": {
-            "RapidWeb\\BucketTesting\\": "./src/"
+            "RapidWeb\\BucketTesting\\": "src/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "kylekatarnls/update-helper": false
         }
     }
 }
